@@ -35,8 +35,8 @@
 * `php` 5.4 или выше;
 * расширение `php-curl`; 
 * «Главный модуль» Битрикс 15.5.4 и выше (на более ранних не проверялось); 
-* [«Конструктор административной части» (rover.fadmin)](https://github.com/pavelshulaev/fadmin) 1.4.6 или выше; 
-* [«Списки параметров» (rover.params)](https://github.com/pavelshulaev/params) 0.5.0 или выше;
+* [«Конструктор административной части» (rover.fadmin)](https://github.com/pavelshulaev/fadmin) 1.6.0 или выше; 
+* [«Списки параметров» (rover.params)](https://github.com/pavelshulaev/params) 0.8.2 или выше;
 * рекомендуется расширение `php-inlt` для корректного отображения кириллических доменов;
 
 > По всем вопросам вы можете связаться со мной по email: rover.webdev@gmail.com, либо через форму на сайте https://www.rover-it.me.
