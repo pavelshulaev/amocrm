@@ -1,4 +1,4 @@
-# onBeforeAmoPush
+# onBeforeAmoPush (актуально с версии 1.11.3)
 Вызывается перед началом интеграции с amoCrm. Срабатывает только в том случае, если для веб-формы или почтового события настроено соотвествующее правило интеграции. 
 
 Событие может быть использовано как для модификации значений передаваемых полей, так и для отмены интеграции, если его обработчик вернёт результат, отличный от `new EventResult(EventResult::SUCCESS, ...)`.
@@ -43,13 +43,17 @@ if (Loader::includeModule('rover.amocrm')){
             if (!$source instanceof Source)
                 throw new ArgumentOutOfRangeException('source');
 
-            if (($source->getType() == Source::SOURCE__EVENT)
+            if (($source->getType() == Source::TYPE__EVENT)
                 && ($source->getName() == 'EXAMPLE_EVENT_NAME')) // EXAMPLE_EVENT_NAME = aspro event name with file
             {
-                $params = $event->getParameter('params');
+                /**
+                 * @var Rover\AmoCRM\Entity\Result $result
+                 */
+                $result = $event->getParameter('result');
+                $params = $result->getEventParams();
 
                 $fileName = trim($params['FILE_NAME']); // FILE_NAME = example field with file name
-                if (strlen($fileName)) 
+                if (strlen($fileName))
                 {
                     $file = \CFile::getList(['ID' => 'DESC'], ['ORIGINAL_NAME' => $fileName])->Fetch();
                     if ($file)
@@ -67,7 +71,8 @@ if (Loader::includeModule('rover.amocrm')){
                         }
 
                         $params['FILE_NAME'] .= ' (' . $src . ')';
-                        $event->setParameter('params', $params);
+                        $result->setEventParams($params);
+                        $event->setParameter('result', $result);
                     }
                 }
             }
