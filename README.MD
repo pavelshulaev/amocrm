@@ -4,7 +4,7 @@
     * [Установка](./help/install.md)
     * [Настройка подключения к amoCRM](./help/settings.md)
     * [Работа со списком правил интеграции](./help/rules.md)
-    * [Доступность полей почтовых событий](./help/post-event-fields.md)
+    * [Добавление полей почтовых событий](./help/post-event-fields.md)
 * [Кейсы использования](./examples.md)
 * [События](./events.md)
 
