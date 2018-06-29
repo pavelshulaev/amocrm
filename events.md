@@ -1,6 +1,6 @@
 # События
 Модуль поддерживает события, основанные на ядре d7 Битрикс.
 
-* [onBeforeAmoPush](./events/onbeforeamopush.md) - срабатывает перед началом передачи данных в amoCrm
+* [onBeforeAmoPush](./events/onbeforeamopush.md) - срабатывает перед началом передачи данных в amoCRM
     
 [на главную](./README.MD)    
