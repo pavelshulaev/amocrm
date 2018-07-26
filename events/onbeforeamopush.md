@@ -1,4 +1,4 @@
-# onBeforeAmoPush (актуально с версии 1.11.3)
+# onBeforeAmoPush (актуально с версии 2.0.0)
 Вызывается перед началом интеграции с amoCRM. Срабатывает только в том случае, если для веб-формы или почтового события настроено соотвествующее правило интеграции. 
 
 Событие может быть использовано как для модификации значений передаваемых полей, так и для отмены интеграции, если его обработчик вернёт результат, отличный от `new EventResult(EventResult::SUCCESS, ...)`.
@@ -39,17 +39,15 @@ if (Loader::includeModule('rover.amocrm')){
          */
         public static function onBeforeAmoPush(Event $event)
         {
-            $source = $event->getParameter('source');
+            $source = $event->getParameter(0);
             if (!$source instanceof Source)
-                throw new ArgumentOutOfRangeException('source');
+                 return new EventResult(EventResult::ERROR, $event->getParameters());
 
             if (($source->getType() == Source::TYPE__EVENT)
                 && ($source->getName() == 'EXAMPLE_EVENT_NAME')) // EXAMPLE_EVENT_NAME = aspro event name with file
             {
-                /**
-                 * @var Rover\AmoCRM\Entity\Result $result
-                 */
-                $result = $event->getParameter('result');
+                /** @var Rover\AmoCRM\Entity\Result $result */
+                $result = $event->getParameter(1);
                 $params = $result->getEventParams();
 
                 $fileName = trim($params['FILE_NAME']); // FILE_NAME = example field with file name
