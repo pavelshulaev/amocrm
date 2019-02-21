@@ -13,7 +13,7 @@ use Bitrix\Main\Loader;
 use Rover\AmoCRM\Config\Options;
 use Bitrix\Main\Event;
 use Bitrix\Main\EventResult;
-use \Rover\AmoCRM\Model\Source;
+use \Rover\AmoCRM\Entity\Source;
 use \Bitrix\Main\ArgumentOutOfRangeException;
 
 if (Loader::includeModule('rover.amocrm')){
