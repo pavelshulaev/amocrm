@@ -40,7 +40,7 @@
 ## Требования
 * расширение `php-curl`; 
 * «Главный модуль» Битрикс 16.0.0 и выше (на более ранних не проверялось); 
-* [«Конструктор административной части» (rover.fadmin)](https://github.com/pavelshulaev/fadmin) 1.8.14 или выше; 
+* [«Конструктор административной части» (rover.fadmin)](https://github.com/pavelshulaev/fadmin) 1.8.16 или выше; 
 * [«Списки параметров» (rover.params)](https://github.com/pavelshulaev/params) 0.9.3 или выше;
 
 Работает на всех версиях php от 5.6 до 7.1. 
