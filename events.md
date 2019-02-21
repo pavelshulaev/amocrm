@@ -68,6 +68,9 @@ $eventManager->addEventHandler('rover.amocrm', 'afterContactGetList', array('\Ro
 ```php 
 namespace Rover\AmoCRM;
 
+use Rover\AmoCRM\Helper\Log;
+use \Bitrix\Main;
+
 class Event
 {
     public static function onAfterContactGetList(Main\Event $event)
