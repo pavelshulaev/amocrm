@@ -14,13 +14,12 @@ use Rover\AmoCRM\Config\Options;
 use Bitrix\Main\Event;
 use Bitrix\Main\EventResult;
 use \Rover\AmoCRM\Model\Source;
-use \Rover\AmoCRM\Helper\Event as EventHelper;
 use \Bitrix\Main\ArgumentOutOfRangeException;
 
 if (Loader::includeModule('rover.amocrm')){
     EventManager::getInstance()->addEventHandler(
         Options::MODULE_ID,
-        EventHelper::ON_BEFORE_AMO_PUSH,
+        'onBeforeAmoPush',
         ["FixAspro", "onBeforeAmoPush"]
     );
 
