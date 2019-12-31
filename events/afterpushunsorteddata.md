@@ -1,4 +1,5 @@
-# afterPushUnsortedData (актуально с версии 2.0.0)
+# afterPushUnsortedData (с версии 2.0.0, устарело с версии 2.1.11)
+Вместо него используется [onAfterPushUnsortedData](./onafterpushunsorteddata.md).
 Вызывается после отправления «неразобранного».
 
 ## Параметры

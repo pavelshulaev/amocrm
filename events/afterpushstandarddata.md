@@ -1,4 +1,5 @@
-# afterPushStandardData (актуально с версии 2.0.0)
+# afterPushStandardData (с версии 2.0.0, устарело с версии 2.1.11)
+Вместо него используется [onAfterPushStandardData](./onafterpushstandarddata.md).
 Вызывается после отправления данных, в событие передаются созданные объекты сущностей.
 
 ## Параметры
