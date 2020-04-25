@@ -1,34 +1,20 @@
 # События [с версии 2.0]
 Модуль поддерживает события, основанные на ядре d7 Битрикс.
 
-#### Общие
+## Общие
 * [onBeforeWebhook](./events/onbeforewebhook.md) (с версии 2.3.1) — перед срабатыванием вебхука. Позволяет добавить свою логику на изменения со стороны амо, а также отменить синхронизацию статусов и флагов амо -> магазин;
 * [onBeforePushData](./events/onbeforepushdata.md) (с версии 2.1.11) — непосредственно перед началом передачи информации в amoCrm, доступны для изменения: объект события интеграции `Rover\AmoCRM\Event`;
 * [onAfterPushData](./events/onafterpushdata.md) (с версии 2.1.11) — после завершения передачи информации в amoCrm, в событие передается объект `Rover\AmoCRM\Event`.
-
-###### Устаревшие (будут удалены в будущих версиях)
-* [onBeforeAmoPush](./events/onbeforeamopush.md) (устарело с версии 2.1.11, используйте [onBeforePushData](./events/onbeforepushdata.md)) — срабатывает перед началом передачи данных в amoCRM
-* [pushData](./events/pushdata.md) (устарело с версии 2.1.11, используйте [onBeforePushData](./events/onbeforepushdata.md)) — непосредственно перед началом передачи информации в amoCrm, можно изменить входные параметры, тип («неразобранное» или нет), а также включить/отключить создание контактов, компаний, сделок и задач;
-* [afterPushData](./events/afterpushdata.md) (устарело с версии 2.1.11, используйте [onAfterPushData](./events/onafterpushdata.md)) — после передачи информации в amoCrm, в событие передаются входные параметры, тип («неразобранное» или нет), а также флаги создания контактов, компаний, сделок и задач.
 
 #### Обычное добавление контактов, компаний, сделок и задач
 * [onBeforePushStandardData](./events/onbeforepushstandarddata.md) (с версии 2.1.11) — перед началом отправления данных, позволяет включить/отключить создание контактов, компаний, сделок и задач, а также отменить отправку;
 * [onBeforePushStandardData](./events/onafterpushstandarddata.md) (с версии 2.1.11) — после отправления данных.
 
-###### Устаревшие (будут удалены в будущих версиях)
-* [beforePushStandardData](./events/beforepushstandarddata.md) (устарело с версии 2.1.11, используйте [onBeforePushStandardData](./events/onbeforepushstandarddata.md)) — перед началом отправления данных, позволяет включить/отключить создание контактов, компаний, сделок и задач, а также отменить отправку;
-* [afterPushStandardData](./events/afterpushstandarddata.md) (устарело с версии 2.1.11, используйте [onBeforePushStandardData](./events/onafterpushstandarddata.md)) — после отправления данных, в событие передаются созданные объекты сущностей.
-
 #### Неразобранное
 * [onBeforePushUnsortedData](./events/onbeforepushunsorteddata.md) (с версии 2.1.11) — перед началом отправления «неразобранного», позволяет включить/отключить создание контакта и компании, а также отменить отправку;
 * [onPushUnsortedData](./events/onpushunsorteddata.md) (с версии 2.1.11) — перед непосредственным отправлением «неразобранного», позволяет внести изменения в создаваемые сущности («неразобранное», контакт, сделка, компания), а также отменить отправку;
 * [onAfterPushUnsortedData](./events/onafterpushunsorteddata.md) (с версии 2.1.11) — после отправления «неразобранного»;
-
-###### Устаревшие (будут удалены в будущих версиях)
-* [beforePushUnsortedData](./events/beforepushunsorteddata.md) (устарело с версии 2.1.11, используйте [onBeforePushUnsortedData](./events/onbeforepushunsorteddata.md)) — перед началом отправления «неразобранного», позволяет включить/отключить создание сделок и задач, а также отменить отправку;
-* [pushUnsortedData](./events/pushunsorteddata.md) (устарело с версии 2.1.11, используйте [onPushUnsortedData](./events/onpushunsorteddata.md)) — перед непосредственным отправлением «неразобранного», позволяет внести изменения в объект «неразобранного» (`Rover\AmoCRM\Entity\Handler\Unsorted`), а также отменить отправку;
-* [afterPushUnsortedData](./events/afterpushunsorteddata.md) (устарело с версии 2.1.11, используйте [onAfterPushUnsortedData](./events/onafterpushunsorteddata.md)) — после отправления «неразобранного»;
-    
+  
 ## События rest-запросов
 #### Ядро `Rover\AmoCRM\Model\Rest`
 * `beforeRestRequest` — перед выполнением любого rest-запроса
@@ -68,6 +54,12 @@
 * `beforeNoteGetList` — перед запросом получения списка примечаний
 * `afterNoteGetList` — после запроса получения списка примечаний
 
+#### Товары каталога
+* `beforeCatalogProductAdd` — перед запросом добавления товара
+* `afterCatalogProductAdd` — после запроса добавления товара
+* `beforeCatalogProductGetList` — перед запросом получения списка товаров
+* `afterCatalogProductGetList` — после запроса получения списка товаров
+
 ### Порядок следования параметров в событиях rest-запросов  
 Для событий, начинающегося с `before[тип сущности]GetList` (например `beforeNoteGetList`):
 
@@ -103,7 +95,7 @@
 Назначение обработчика на событие:
 ```php
 $eventManager = \Bitrix\Main\EventManager::getInstance();
-$eventManager->addEventHandler('rover.amocrm', 'afterContactGetList', array('\Rover\AmoCRM\Event', 'onAfterContactGetList'));
+$eventManager->addEventHandler('rover.amocrm', 'afterContactGetList', ['\Rover\AmoCRM\Event', 'onAfterContactGetList']);
 ```
 Сам обработчик:
 ```php 
@@ -124,4 +116,5 @@ class Event
 ```
 
 ---
+[устаревшие события](./events/outdated.md)
 [на главную](./README.MD)    
