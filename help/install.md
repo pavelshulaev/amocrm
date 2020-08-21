@@ -63,5 +63,4 @@
         \Rover\AmoCRM\Helper\Updater::run();
         
 ---
-* [Справочный центр](../help.md)
 * [на главную](../README.MD)
