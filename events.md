@@ -54,12 +54,6 @@
 * `beforeNoteGetList` — перед запросом получения списка примечаний
 * `afterNoteGetList` — после запроса получения списка примечаний
 
-#### Товары каталога
-* `beforeCatalogProductAdd` — перед запросом добавления товара
-* `afterCatalogProductAdd` — после запроса добавления товара
-* `beforeCatalogProductGetList` — перед запросом получения списка товаров
-* `afterCatalogProductGetList` — после запроса получения списка товаров
-
 ### Порядок следования параметров в событиях rest-запросов  
 Для событий, начинающегося с `before[тип сущности]GetList` (например `beforeNoteGetList`):
 
