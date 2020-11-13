@@ -73,8 +73,7 @@
 * расширение `php-curl`; 
 * «Главный модуль» Битрикс 16.5.9 и выше (на более ранних работать не будет); 
 * [«Конструктор административной части» (rover.fadmin)](https://github.com/pavelshulaev/fadmin) 1.9.1 или выше; 
-* [«Списки параметров» (rover.params)](https://github.com/pavelshulaev/params) 0.9.3 или выше;
-* php не ниже 7.0.
+* php не ниже 7.1.
 
 > По всем вопросам пишите на rover.webdev@gmail.com, либо через форму на сайте https://www.rover-it.me.
 ---
