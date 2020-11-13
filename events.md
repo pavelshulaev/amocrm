@@ -15,6 +15,12 @@
 * [onPushUnsortedData](./events/onpushunsorteddata.md) (с версии 2.1.11) — перед непосредственным отправлением «неразобранного», позволяет внести изменения в создаваемые сущности («неразобранное», контакт, сделка, компания), а также отменить отправку;
 * [onAfterPushUnsortedData](./events/onafterpushunsorteddata.md) (с версии 2.1.11) — после отправления «неразобранного»;
   
+#### Товары
+* [beforeSearchOneByBasketItem](./events/beforesearchonebybasketitem.md) (с версии 2.6.9) — перед поиском товара в amoCRM на основе товара в корзине;
+* [afterSearchOneByBasketItem](./events/aftersearchonebybasketitem.md) (с версии 2.6.9) — после поиска товара в amoCRM на основе товара в корзине;
+* [beforeMakeCatalogElementByBasketItem](./events/beforemakecatalogelementbybasketitem.md)(с версии 2.6.9) — перед созданием товара для amoCRM на основе товара в корзине;
+* [afterMakeCatalogElementByBasketItem](./events/aftermakecatalogelementbybasketitem.md)(с версии 2.6.9) — после создания товара для amoCRM на основе товара в корзине.
+  
 ## События rest-запросов
 #### Ядро `Rover\AmoCRM\Model\Rest`
 * `beforeRestRequest` — перед выполнением любого rest-запроса
