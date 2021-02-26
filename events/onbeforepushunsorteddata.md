@@ -1,9 +1,8 @@
-# onBeforePushUnsortedData (с версии 2.1.11)
+# onBeforePushUnsortedData
 Вызывается перед началом отправления «неразобранного», позволяет включить/отключить создание сделок и задач, а также отменить отправку.
 
 ## Параметры
-0. `Rover\AmoCRM\Event` — объект события интеграции;
-1. `Rover\AmoCRM\Helper\TransportProvider` — объект, содержащий все значимые объекты процесса интеграции (с версии 2.2.11)
+0. `Rover\AmoCRM\Controller\Transport` — объект содержащий все значимые объекты процесса интеграции, в т.ч. `Rover\AmoCRM\Event` и `Rover\AmoCRM\Profile`, а также контроллеры создаваемых объектов.
 
 ## Обработка события
-Аналогично обработке [onBeforeAmoPush](./onbeforeamopush.md).
+Аналогично обработке [onBeforePushData](./onbeforepushdata.md).

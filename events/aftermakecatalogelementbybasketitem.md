@@ -6,4 +6,4 @@
 1. `AmoCRM\Models\CatalogElementModel` Ч созданный товар.
 
 ## ќбработка событи€
-јналогично обработке [onBeforeAmoPush](./onbeforeamopush.md).
+јналогично обработке [onBeforePushData](./onbeforepushdata.md).

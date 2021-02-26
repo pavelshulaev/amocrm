@@ -1,25 +1,25 @@
-# События [с версии 2.0]
+# События
 Модуль поддерживает события, основанные на ядре d7 Битрикс.
 
 ## Общие
-* [onBeforeWebhook](./events/onbeforewebhook.md) (с версии 2.3.1) — перед срабатыванием вебхука. Позволяет добавить свою логику на изменения со стороны амо, а также отменить синхронизацию статусов и флагов амо -> магазин;
-* [onBeforePushData](./events/onbeforepushdata.md) (с версии 2.1.11) — непосредственно перед началом передачи информации в amoCrm, доступны для изменения: объект события интеграции `Rover\AmoCRM\Event`;
-* [onAfterPushData](./events/onafterpushdata.md) (с версии 2.1.11) — после завершения передачи информации в amoCrm, в событие передается объект `Rover\AmoCRM\Event`.
+* [onBeforeWebhook](./events/onbeforewebhook.md) — перед срабатыванием вебхука. Позволяет добавить свою логику на изменения со стороны амо, а также отменить синхронизацию статусов и флагов амо -> магазин;
+* [onBeforePushData](./events/onbeforepushdata.md) — непосредственно перед началом передачи информации в amoCrm, доступны для изменения: объект события интеграции `Rover\AmoCRM\Event`;
+* [onAfterPushData](./events/onafterpushdata.md) — после завершения передачи информации в amoCrm, в событие передается объект `Rover\AmoCRM\Event`.
 
 #### Обычное добавление контактов, компаний, сделок и задач
-* [onBeforePushStandardData](./events/onbeforepushstandarddata.md) (с версии 2.1.11) — перед началом отправления данных, позволяет включить/отключить создание контактов, компаний, сделок и задач, а также отменить отправку;
-* [onBeforePushStandardData](./events/onafterpushstandarddata.md) (с версии 2.1.11) — после отправления данных.
+* [onBeforePushStandardData](./events/onbeforepushstandarddata.md) — перед началом отправления данных, позволяет включить/отключить создание контактов, компаний, сделок и задач, а также отменить отправку;
+* [onAfterPushStandardData](./events/onafterpushstandarddata.md) — после отправления данных.
 
 #### Неразобранное
-* [onBeforePushUnsortedData](./events/onbeforepushunsorteddata.md) (с версии 2.1.11) — перед началом отправления «неразобранного», позволяет включить/отключить создание контакта и компании, а также отменить отправку;
-* [onPushUnsortedData](./events/onpushunsorteddata.md) (с версии 2.1.11) — перед непосредственным отправлением «неразобранного», позволяет внести изменения в создаваемые сущности («неразобранное», контакт, сделка, компания), а также отменить отправку;
-* [onAfterPushUnsortedData](./events/onafterpushunsorteddata.md) (с версии 2.1.11) — после отправления «неразобранного»;
+* [onBeforePushUnsortedData](./events/onbeforepushunsorteddata.md) — перед началом отправления «неразобранного», позволяет включить/отключить создание контакта и компании, а также отменить отправку;
+* [onPushUnsortedData](./events/onpushunsorteddata.md) — перед непосредственным отправлением «неразобранного», позволяет внести изменения в создаваемые сущности («неразобранное», контакт, сделка, компания), а также отменить отправку;
+* [onAfterPushUnsortedData](./events/onafterpushunsorteddata.md) — после отправления «неразобранного»;
   
 #### Товары
-* [beforeSearchOneByBasketItem](./events/beforesearchonebybasketitem.md) (с версии 2.6.9) — перед поиском товара в amoCRM на основе товара в корзине;
-* [afterSearchOneByBasketItem](./events/aftersearchonebybasketitem.md) (с версии 2.6.9) — после поиска товара в amoCRM на основе товара в корзине;
-* [beforeMakeCatalogElementByBasketItem](./events/beforemakecatalogelementbybasketitem.md)(с версии 2.6.9) — перед созданием товара для amoCRM на основе товара в корзине;
-* [afterMakeCatalogElementByBasketItem](./events/aftermakecatalogelementbybasketitem.md)(с версии 2.6.9) — после создания товара для amoCRM на основе товара в корзине.
+* [beforeSearchOneByBasketItem](./events/beforesearchonebybasketitem.md) — перед поиском товара в amoCRM на основе товара в корзине;
+* [afterSearchOneByBasketItem](./events/aftersearchonebybasketitem.md) — после поиска товара в amoCRM на основе товара в корзине;
+* [beforeMakeCatalogElementByBasketItem](./events/beforemakecatalogelementbybasketitem.md) — перед созданием товара для amoCRM на основе товара в корзине;
+* [afterMakeCatalogElementByBasketItem](./events/aftermakecatalogelementbybasketitem.md) — после создания товара для amoCRM на основе товара в корзине.
   
 ## События rest-запросов
 #### Ядро `Rover\AmoCRM\Model\Rest`
@@ -116,5 +116,4 @@ class Event
 ```
 
 ---
-[устаревшие события](./events/outdated.md)
 [на главную](./README.MD)    
