@@ -1,4 +1,7 @@
 # Модуль для Битрикс «AmoCRM — интеграция с веб-формами и почтовыми событиями»
+
+## Данная справка устарела. Актуальная версия находится [здесь](https://rover-it.me/knowledge/course/course1/index).
+
 * [Возможности](./capabilities.md)
 * [Установка](./install.md)
    * [Установка из Marketplace](./install/marketplace.md)
